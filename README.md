@@ -159,4 +159,6 @@ https://www.baeldung.com/java-pojo-class
 https://www.baeldung.com/thymeleaf-in-spring-mvc
 
 ## Additional Resources
-https://www.baeldung.com/start-here
+- https://www.baeldung.com/start-here
+- [A quick migration guide from C++ to Java.](https://drive.google.com/file/d/1Ttl1GGjqBGe6Gl8rCUqYBfJCcgz4iie1/view)
+
