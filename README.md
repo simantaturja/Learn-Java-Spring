@@ -226,12 +226,18 @@ _Fig: Collections Framework Hierarchy, Source: [https://www.javatpoint.com/colle
 **<span style="text-decoration:underline;">2.5 Annotations</span>**
 
 
-
+* [https://jenkov.com/tutorials/java-reflection/index.html](https://jenkov.com/tutorials/java-reflection/index.html) 
+* [https://www.baeldung.com/java-reflection](https://www.baeldung.com/java-reflection)
+* [https://docs.oracle.com/javase/tutorial/java/annotations/index.html](https://docs.oracle.com/javase/tutorial/java/annotations/index.html)
+* [https://www.baeldung.com/java-default-annotations](https://www.baeldung.com/java-default-annotations)
+* [Custom Annotation: https://www.youtube.com/watch?v=DkZr7_c9ry8](https://www.youtube.com/watch?v=DkZr7_c9ry8)
+* [https://reflectoring.io/java-annotation-processing/](https://reflectoring.io/java-annotation-processing/)
 * [https://github.com/winterbe/java8-tutorial#annotations](https://github.com/winterbe/java8-tutorial#annotations) 
 * [https://www.baeldung.com/java-default-annotations](https://www.baeldung.com/java-default-annotations) 
 * [@Deprecated annotation examples](https://codejava.net/java-core/the-java-language/deprecated-annotation-examples)
 * [@Override annotation examples](https://codejava.net/java-core/the-java-language/override-annotation-examples)
 * [@SuppressWarnings annotation examples](https://codejava.net/java-core/the-java-language/suppresswarnings-annotation-examples)
+* [Annotations under the hood](https://hannesdorfmann.com/annotation-processing/annotationprocessing101/)
 
 **<span style="text-decoration:underline;">2.6 Date API</span>**
 
