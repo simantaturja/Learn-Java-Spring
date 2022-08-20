@@ -258,8 +258,19 @@ _Fig: Collections Framework Hierarchy, Source: [https://www.javatpoint.com/colle
 
 
 
-*  [https://codejava.net/concurrency-tutorials](https://codejava.net/concurrency-tutorials) 
 * All 14 Parts - [https://foojay.io/today/java-thread-programming-part-1/](https://foojay.io/today/java-thread-programming-part-1/)  
+* Synchronized - [https://www.baeldung.com/java-synchronized](https://www.baeldung.com/java-synchronized)
+* Volatile - [https://jenkov.com/tutorials/java-concurrency/volatile.html](https://jenkov.com/tutorials/java-concurrency/volatile.html)
+* Completable Future - [https://www.baeldung.com/java-completablefuture](https://www.baeldung.com/java-completablefuture)
+* Oracle Docs - [https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html)
+* Synchronization and Locks - [https://web.mit.edu/6.005/www/fa15/classes/23-locks/](https://web.mit.edu/6.005/www/fa15/classes/23-locks/)
+* Reentrant Lock - [https://www.geeksforgeeks.org/reentrantreadwritelock-class-in-java/](https://www.geeksforgeeks.org/reentrantreadwritelock-class-in-java/)
+* Executor Service - [https://jenkov.com/tutorials/java-util-concurrent/executorservice.html](https://jenkov.com/tutorials/java-util-concurrent/executorservice.html)
+* Thread Pool - [https://www.geeksforgeeks.org/thread-pools-java/](https://www.geeksforgeeks.org/thread-pools-java/)
+* Thread Pool Executor - [https://www.digitalocean.com/community/tutorials/threadpoolexecutor-java-thread-pool-example-executorservice](https://www.digitalocean.com/community/tutorials/threadpoolexecutor-java-thread-pool-example-executorservice)
+* Fork Join Framework - [https://www.educative.io/answers/what-is-the-use-of-fork-join-framework-in-java](https://www.educative.io/answers/what-is-the-use-of-fork-join-framework-in-java)
+
+
 
 **<span style="text-decoration:underline;">3.2 Features of Java 8 and later</span>**
 
