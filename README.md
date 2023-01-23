@@ -61,7 +61,9 @@
 
 
 
-* [https://www.codejava.net/java-core/the-java-language/what-is-abstraction-in-java-the-why-and-the-truth](https://www.codejava.net/java-core/the-java-language/what-is-abstraction-in-java-the-why-and-the-truth) 
+* [https://www.codejava.net/java-core/the-java-language/what-is-abstraction-in-java-the-why-and-the-truth](https://www.codejava.net/java-core/the-java-language/what-is-abstraction-in-java-the-why-and-the-truth)
+
+* [https://www.javatpoint.com/abstract-class-in-java#:~:text=in%20Java%20first.-,Abstraction%20in%20Java,text%20and%20send%20the%20message.](https://www.javatpoint.com/abstract-class-in-java#:~:text=in%20Java%20first.-,Abstraction%20in%20Java,text%20and%20send%20the%20message.) 
 
 **1.4.4 Inheritance**
 
