@@ -73,8 +73,6 @@
 * [https://www.codejava.net/java-core/the-java-language/12-rules-and-examples-about-inheritance-in-java](https://www.codejava.net/java-core/the-java-language/12-rules-and-examples-about-inheritance-in-java) 
 * [https://www.baeldung.com/java-inheritance-composition](https://www.baeldung.com/java-inheritance-composition)
 
-* [https://dzone.com/articles/default-and-private-methods-in-interfaces]
-(https://dzone.com/articles/default-and-private-methods-in-interfaces) 
 
 **1.4.5 Polymorphism**
 
@@ -92,7 +90,7 @@
 
 **1.4.7 Miscellaneous**
 
-
+* [https://dzone.com/articles/default-and-private-methods-in-interfaces](https://dzone.com/articles/default-and-private-methods-in-interfaces) 
 
 * [https://www.baeldung.com/java-this](https://www.baeldung.com/java-this) 
 * [https://www.baeldung.com/java-type-casting](https://www.baeldung.com/java-type-casting) 
