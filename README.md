@@ -71,7 +71,10 @@
 
 * [https://www.codejava.net/java-core/the-java-language/what-is-inheritance-in-java-the-what-why-and-how](https://www.codejava.net/java-core/the-java-language/what-is-inheritance-in-java-the-what-why-and-how) 
 * [https://www.codejava.net/java-core/the-java-language/12-rules-and-examples-about-inheritance-in-java](https://www.codejava.net/java-core/the-java-language/12-rules-and-examples-about-inheritance-in-java) 
-* [https://www.baeldung.com/java-inheritance-composition](https://www.baeldung.com/java-inheritance-composition) 
+* [https://www.baeldung.com/java-inheritance-composition](https://www.baeldung.com/java-inheritance-composition)
+
+* [https://dzone.com/articles/default-and-private-methods-in-interfaces]
+(https://dzone.com/articles/default-and-private-methods-in-interfaces) 
 
 **1.4.5 Polymorphism**
 
