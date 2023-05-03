@@ -85,7 +85,9 @@
 
 * [https://www.codejava.net/java-core/the-java-language/what-is-overloading-in-java-and-examples](https://www.codejava.net/java-core/the-java-language/what-is-overloading-in-java-and-examples) 
 * [https://www.codejava.net/java-core/the-java-language/12-rules-of-overriding-in-java-you-should-know](https://www.codejava.net/java-core/the-java-language/12-rules-of-overriding-in-java-you-should-know) 
-* [https://www.codejava.net/java-core/the-java-language/differences-between-overriding-and-overloading](https://www.codejava.net/java-core/the-java-language/differences-between-overriding-and-overloading) 
+* [https://www.codejava.net/java-core/the-java-language/differences-between-overriding-and-overloading](https://www.codejava.net/java-core/the-java-language/differences-between-overriding-and-overloading)
+* [https://www.javatpoint.com/covariant-return-type](https://www.javatpoint.com/covariant-return-type)
+* [Hidden Method](https://www.javatpoint.com/method-hiding-in-java#:~:text=What%20is%20method%20hiding%3F&text=Method%20hiding%20can%20be%20defined,is%20known%20as%20method%20hiding.)
 
 **1.4.7 Miscellaneous**
 
