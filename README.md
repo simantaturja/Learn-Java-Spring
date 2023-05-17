@@ -27,7 +27,7 @@
 
 [https://www.baeldung.com/java-using-not-in-if-conditions](https://www.baeldung.com/java-using-not-in-if-conditions) 
 
-**1.2.3 Switch Case **
+**1.2.3 Switch Case**
 
 [https://www.baeldung.com/java-switch](https://www.baeldung.com/java-switch) 
 
@@ -99,6 +99,7 @@
 * [https://java2blog.com/final-keyword-java-example/](https://java2blog.com/final-keyword-java-example/) 
 * [https://java2blog.com/static-block-java/](https://java2blog.com/static-block-java/) 
 * [https://java2blog.com/java-static-import-example/](https://java2blog.com/java-static-import-example/)
+* [https://www.baeldung.com/java-static-default-methods](https://www.baeldung.com/java-static-default-methods)
 * [Java Variables Passing Examples - Pass-by-value or Pass-by-reference?](https://codejava.net/java-core/the-java-language/java-variables-passing-examples-pass-by-value-or-pass-by-reference)
 * [https://www.baeldung.com/java-wrapper-classes](https://www.baeldung.com/java-wrapper-classes)  
 * [https://www.javatpoint.com/java-bean](https://www.javatpoint.com/java-bean)
