@@ -158,7 +158,6 @@ _Fig: Collections Framework Hierarchy, Source: [https://www.javatpoint.com/colle
     * [Partition a List in Java ](https://www.baeldung.com/java-list-split)
     * [Removing all nulls from a List in Java ](https://www.baeldung.com/java-remove-nulls-from-list)
     * [Removing all duplicates from a List in Java ](https://www.baeldung.com/java-remove-duplicates-from-list)
-    * [Removing all Nulls from a List in Java ](https://www.baeldung.com/java-remove-nulls-from-list)
     * [Check If Two Lists are Equal in Java ](https://www.baeldung.com/java-test-a-list-for-ordinality-and-equality)
     * [How to Find an Element in a List with Java ](https://www.baeldung.com/find-list-element-java)<span style="text-decoration:underline;">(popular)</span>
     * [Java List UnsupportedOperationException ](https://www.baeldung.com/java-list-unsupported-operation-exception)
