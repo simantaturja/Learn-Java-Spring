@@ -99,7 +99,7 @@ void main() {
 This is real, final Java (not a preview) — you add classes, `public static void main`, and packages later, once you need them. Older tutorials still show the classic form; both compile.
 
 - ⭐ 📖 [JEP 512: Compact Source Files & Instance Main Methods](https://openjdk.org/jeps/512)
-- 🧪 [Getting Started with Java (dev.java)](https://dev.java/learn/getting-started/)
+- 🧪 [Getting Started with Java (dev.java)](https://dev.java/learn/first-steps/first-java-code/getting-started/)
 
 ### 1.1 Primitives & Variables
 
@@ -730,7 +730,7 @@ Most tutorials online still target Boot 3. These are the differences you'll noti
 
 ### 12.3 CI/CD
 
-- 📖 [Building and Testing Java with Maven (GitHub Actions)](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven)
+- 📖 [Building and Testing Java with Maven (GitHub Actions)](https://docs.github.com/en/actions/tutorials/build-and-test-code/java-with-maven)
 - Aim for a pipeline that runs tests (incl. Testcontainers), builds a container image, and deploys on merge.
 
 ### 12.4 Spring AI 🆕
@@ -780,7 +780,7 @@ Most tutorials online still target Boot 3. These are the differences you'll noti
 
 ### 13.2 Upgrading Spring Boot (2 → 3 → 4)
 
-- [`javax` → `jakarta`: the big Boot 3 break](https://www.baeldung.com/java-javax-to-jakarta)
+- [`javax` → `jakarta`: the big Boot 3 break](https://www.baeldung.com/java-jakarta-enterprise-edition-migration)
 - [Migrating to Spring Boot 3](https://www.baeldung.com/spring-boot-3-migration)
 - 📖 [Spring Boot 4.0 Migration Guide (official wiki)](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide)
 - 📖 [OpenRewrite — Spring Boot 3 recipes](https://docs.openrewrite.org/recipes/java/spring/boot3) · [Spring Boot 4 recipes](https://docs.openrewrite.org/recipes/java/spring/boot4)
