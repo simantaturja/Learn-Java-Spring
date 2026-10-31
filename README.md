@@ -32,7 +32,9 @@ flowchart TD
     J --> K["11 · Spring Framework & Spring Boot"]
     H --> K
     K --> L["12 · Cloud-Native, Microservices & Spring AI"]
-    L --> M["13 · Practice, Projects & Roadmaps"]
+    K --> N["13 · Upgrading & Maintaining Legacy Code"]
+    L --> M["14 · Practice, Projects & Roadmaps"]
+    N --> M
 ```
 
 ## 🧭 How to Use This Guide
@@ -42,6 +44,20 @@ flowchart TD
 - Look for these markers on individual resources:
   - 🎥 video · 📖 deep-read / official docs · ⚡ quick reference · 🧪 hands-on · ⭐ start here · 🆕 modern (Java 17+ / Spring Boot 3+)
 - **LTS-first mindset:** target **Java 21** or **Java 25** and **Spring Boot 4.x** for anything new. Older material is still valuable for concepts — just prefer modern syntax when you code.
+- **Mind the version gap:** many linked tutorials were written for Spring Boot 3 / Spring Security 6 / Jackson 2. The concepts carry over; where an API changed in Boot 4, the chapter calls it out.
+
+### 🤖 Learning with AI Assistants
+
+AI coding assistants are part of the job now — but *how* you use them while learning decides whether you actually learn. In a [2026 randomized study by Anthropic](https://www.anthropic.com/research/AI-assistance-coding-skills), developers learning an unfamiliar library with AI help finished slightly faster but scored **worse on understanding** — except for those who used the assistant in ways that kept them thinking (asking for explanations, checking their own reasoning).
+
+Use AI as a **tutor and reviewer, not a ghostwriter**:
+
+- ✍️ **Write it first, then ask.** Attempt every exercise yourself; use AI afterwards to review, explain, or compare your solution with an idiomatic one.
+- ❓ **Ask "why", not "write".** _"Why does this `HashMap` lookup return `null`?"_ teaches more than _"fix my code"_.
+- 🔮 **Predict before you run.** When AI generates code, read it and predict its output or failure modes before executing it.
+- 🧠 **Get quizzed.** _"Quiz me on Chapter 3 — one question at a time, don't give the answer until I try."_
+- 🔍 **Verify against the source.** Models can be out of date (e.g. suggesting Spring Boot 2 / `javax.*` code). Cross-check with the official docs linked in each chapter.
+- 🚫 **Go unassisted on fundamentals.** For Chapters 1–3, turn inline completion off. You can't review code you couldn't have written.
 
 ### 📚 Table of Contents
 
@@ -57,7 +73,8 @@ flowchart TD
 10. [Jakarta EE & Servlets](#-chapter-10-jakarta-ee--servlets)
 11. [Spring Framework & Spring Boot](#-chapter-11-spring-framework--spring-boot)
 12. [Cloud-Native, Microservices & Spring AI](#-chapter-12-cloud-native-microservices--spring-ai)
-13. [Practice, Projects & Roadmaps](#-chapter-13-practice-projects--roadmaps)
+13. [Upgrading & Maintaining Legacy Code](#-chapter-13-upgrading--maintaining-legacy-code)
+14. [Practice, Projects & Roadmaps](#-chapter-14-practice-projects--roadmaps)
 
 ---
 
@@ -66,6 +83,23 @@ flowchart TD
 > Goal: read, write, and run simple Java programs. Understand types, control flow, and errors.
 
 **⭐ Start here:** [dev.java — the official learning portal from Oracle](https://dev.java/learn/) · [The Java Tutorials (Oracle)](https://docs.oracle.com/javase/tutorial/)
+
+### 1.0 Your First Program — the Java 25 Way 🆕
+
+Since **Java 25**, a beginner's first program no longer needs `public class`, `static`, or `String[] args`:
+
+```java
+// Hello.java — run it directly with: java Hello.java
+void main() {
+    String name = IO.readln("What's your name? ");
+    IO.println("Hello, " + name + "!");
+}
+```
+
+This is real, final Java (not a preview) — you add classes, `public static void main`, and packages later, once you need them. Older tutorials still show the classic form; both compile.
+
+- ⭐ 📖 [JEP 512: Compact Source Files & Instance Main Methods](https://openjdk.org/jeps/512)
+- 🧪 [Getting Started with Java (dev.java)](https://dev.java/learn/first-steps/first-java-code/getting-started/)
 
 ### 1.1 Primitives & Variables
 
@@ -78,7 +112,7 @@ flowchart TD
 - [Java Control Structures](https://www.baeldung.com/java-control-structures)
 - [Convention: avoid `!` in `if` conditions](https://www.baeldung.com/java-using-not-in-if-conditions)
 - [The `switch` Statement](https://www.baeldung.com/java-switch)
-- 🆕 [Switch Expressions (Java 14+)](https://www.baeldung.com/java-switch) · see also [Chapter 4](#-chapter-4-modern-java-14--25)
+- 🆕 [Switch Expressions (Java 14+)](https://openjdk.org/jeps/361) · see also [Chapter 4](#-chapter-4-modern-java-14--25)
 
 ### 1.3 Loops
 
@@ -88,7 +122,7 @@ flowchart TD
 
 - [String vs. StringBuilder vs. StringBuffer](https://www.techiedelight.com/difference-between-string-stringbuilder-java/)
 - [Guide to the Java String API](https://www.baeldung.com/java-string)
-- 🆕 [Text Blocks — multi-line strings (Java 15+)](https://www.baeldung.com/java-15-new)
+- 🆕 [Text Blocks — multi-line strings (Java 15+)](https://www.baeldung.com/java-text-blocks)
 
 ### 1.5 Exception Handling
 
@@ -96,6 +130,15 @@ flowchart TD
 - [Checked vs. Unchecked Exceptions](https://www.baeldung.com/java-checked-unchecked-exceptions)
 - [`throw` vs. `throws`](https://java2blog.com/difference-between-throw-and-throws-in-java/)
 - [Creating a Custom Exception](https://www.baeldung.com/java-new-custom-exception)
+
+### 1.6 Tools of the Trade: IDE, Debugger & Git
+
+> Every job assumes these from day one — learn them alongside the language, not after.
+
+- 📖 [Debugging Code in IntelliJ IDEA (JetBrains)](https://www.jetbrains.com/help/idea/debugging-code.html)
+- [IntelliJ Debugging Tricks](https://www.baeldung.com/intellij-debugging-tricks)
+- 🧪 [Learn Git Branching — interactive tutorial](https://learngitbranching.js.org/)
+- 📖 [Pro Git — the free official book](https://git-scm.com/book/en/v2)
 
 ---
 
@@ -297,10 +340,21 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 - 🆕 [Pattern Matching for `instanceof`](https://www.baeldung.com/java-pattern-matching-instanceof)
 - 🆕 [Pattern Matching for `switch`](https://www.baeldung.com/java-switch-pattern-matching)
 - 🆕 [Record Patterns — destructuring](https://www.baeldung.com/java-19-record-patterns)
-- 🆕 [Text Blocks — multi-line string literals](https://www.baeldung.com/java-15-new)
-- 🆕 [Switch Expressions](https://www.baeldung.com/java-switch)
+- 🆕 [Text Blocks — multi-line string literals](https://www.baeldung.com/java-text-blocks)
+- 🆕 [Switch Expressions](https://openjdk.org/jeps/361)
 - 🆕 [`var` — Local Variable Type Inference](https://www.baeldung.com/java-10-local-variable-type-inference)
 - 🆕 [Sequenced Collections](https://www.baeldung.com/java-21-sequenced-collections)
+- 🆕 [Unnamed Variables & Patterns (`_`) — Java 22](https://openjdk.org/jeps/456)
+- 🆕 [Stream Gatherers — custom intermediate operations — Java 24](https://openjdk.org/jeps/485)
+
+**Finalized in Java 25 (LTS)** — the newest features you can use in production today:
+
+- 🆕 [Compact Source Files & Instance `main` (JEP 512)](https://openjdk.org/jeps/512) — `void main()` with no class boilerplate; see [1.0](#10-your-first-program--the-java-25-way-)
+- 🆕 [Module Import Declarations (JEP 511)](https://openjdk.org/jeps/511) — `import module java.base;` pulls in a whole module's packages
+- 🆕 [Flexible Constructor Bodies (JEP 513)](https://openjdk.org/jeps/513) — validate arguments *before* calling `super(...)`
+- 🆕 [Scoped Values (JEP 506)](https://openjdk.org/jeps/506) — safer, cheaper alternative to `ThreadLocal`, built for virtual threads
+
+> ⚠️ **Still in preview in Java 25:** [Structured Concurrency (JEP 505)](https://openjdk.org/jeps/505). Great to learn, but it needs `--enable-preview` and its API may still change.
 
 ### 4.2 What's New, Version by Version
 
@@ -316,8 +370,9 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 - **[Java 17](https://www.baeldung.com/java-migrate-8-to-17)** — sealed classes finalized; migration guide 8 → 17
 - [Java 18](https://www.happycoders.eu/java/java-18-features/) — UTF-8 by default, simple web server
 - **[Java 21](https://www.baeldung.com/java-lts-21-new-features)** — virtual threads, pattern matching for `switch`, record patterns, sequenced collections
-- [Java 22](https://www.baeldung.com/java-22-overview) — stream gatherers (preview), unnamed variables
-- [Java 25](https://www.baeldung.com/java-25-features) — 🆕 **latest LTS**: scoped values, compact source files & instance `main`, structured concurrency
+- [Java 22](https://www.baeldung.com/java-22-overview) — unnamed variables & patterns, Foreign Function & Memory API finalized, stream gatherers (preview)
+- [Java 23](https://openjdk.org/projects/jdk/23/) · [Java 24](https://openjdk.org/projects/jdk/24/) — Markdown doc comments, stream gatherers finalized, virtual threads no longer pinned by `synchronized`
+- **[Java 25](https://www.baeldung.com/java-25-features)** — 🆕 **latest LTS**: compact source files & instance `main`, module imports, flexible constructor bodies, scoped values (all final); structured concurrency (still preview) · [full JEP list](https://openjdk.org/projects/jdk/25/)
 - 📖 [Full JDK release/JEP index (OpenJDK)](https://openjdk.org/projects/jdk/)
 
 ---
@@ -344,8 +399,8 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 
 - ⭐ [Difference Between Thread and Virtual Thread](https://www.baeldung.com/java-virtual-thread-vs-thread)
 - [OpenJDK Project Loom](https://www.baeldung.com/openjdk-project-loom)
-- [Structured Concurrency](https://www.baeldung.com/java-structured-concurrency)
-- [Scoped Values (a modern alternative to `ThreadLocal`)](https://www.baeldung.com/java-20-scoped-values)
+- [Structured Concurrency](https://www.baeldung.com/java-structured-concurrency) — ⚠️ still preview in Java 25
+- [Scoped Values (a modern alternative to `ThreadLocal`)](https://www.baeldung.com/java-20-scoped-values) — final since Java 25
 - [Working with Virtual Threads in Spring](https://www.baeldung.com/spring-6-virtual-threads)
 
 ### 5.3 The JVM: Memory & Garbage Collection
@@ -451,6 +506,7 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 - [The DAO Pattern in Java](https://www.baeldung.com/java-dao-pattern)
 - [Connection Pooling with HikariCP](https://www.baeldung.com/hikaricp)
 - [Database Migrations with Flyway](https://www.baeldung.com/database-migrations-with-flyway)
+- [Database Migrations with Liquibase](https://www.baeldung.com/liquibase-refactor-schema-of-java-app) — the other tool you'll meet in enterprise codebases
 
 > Spring's persistence layer (Spring Data JPA, `JdbcTemplate`) is covered in [Chapter 11.9](#119-persistence-spring-jdbc--spring-data-jpa).
 
@@ -486,6 +542,25 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 - 🆕 [Spring Boot 3 & Spring Framework 6.0 — What's New](https://www.baeldung.com/spring-boot-3-spring-6-new)
 - 🆕 [Spring Boot 4 & Spring Framework 7 — What's New](https://www.baeldung.com/spring-boot-4-spring-framework-7)
 
+#### 🆕 What changed in Spring Boot 4 / Framework 7 (Nov 2025)
+
+Most tutorials online still target Boot 3. These are the differences you'll notice first — each is covered in the section linked:
+
+| Change | What it means for you | Where |
+|---|---|---|
+| **Built-in API versioning** | Version endpoints by path, header, query param or media type — no hand-rolled routing | [11.4](#114-building-rest-apis) |
+| **HTTP Interface clients & `RestClient`** | Declare a Java interface, get a typed HTTP client; `RestTemplate` is legacy | [11.4](#114-building-rest-apis) |
+| **`@Retryable` / `@ConcurrencyLimit` in core** | Basic resilience without pulling in Spring Retry or Resilience4j | [11.14](#1114-resilience-retries--concurrency-limits-) |
+| **JSpecify null-safety** | `@Nullable`/`@NonNull` across the Spring APIs — your IDE and tools can catch NPEs at compile time | [11.2](#112-beans-inversion-of-control--dependency-injection) |
+| **Jackson 3** | New `tools.jackson` packages; a Jackson 2 compatibility module eases migration | [11.8](#118-json-templates--serialization) |
+| **Spring Security 7** | Lambda DSL only; older `WebSecurityConfigurerAdapter` tutorials are obsolete | [11.11](#1111-spring-security-) |
+| **Modular auto-configuration** | Boot's autoconfigure jar is split into focused modules — smaller apps, clearer dependencies | [13.2](#132-upgrading-spring-boot-2--3--4) |
+| **Baselines** | Java 17+ (Java 25 recommended), Jakarta EE 11, Kotlin 2.2 | — |
+
+- ⭐ 📖 [Spring Boot 4.0 — release announcement](https://spring.io/blog/2025/11/20/spring-boot-4-0-0-available-now)
+- [Spring Boot 4: Everything You Need to Know (Dan Vega)](https://www.danvega.dev/blog/2025/11/24/spring-boot-4-is-here)
+- [Spring Framework 7 & Spring Boot 4 Deliver API Versioning, Resilience and Null-Safe Annotations (InfoQ)](https://www.infoq.com/news/2025/11/spring-7-spring-boot-4)
+
 ### 11.2 Beans, Inversion of Control & Dependency Injection
 
 - ⭐ [Understanding the Core of the Spring Framework](https://codejava.net/frameworks/spring/understanding-the-core-of-spring-framework)
@@ -500,6 +575,7 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 - [Circular Dependencies in Spring](https://www.baeldung.com/circular-dependencies-in-spring)
 - [`UnsatisfiedDependencyException`](https://www.baeldung.com/spring-unsatisfied-dependency)
 - [Bean Scopes](https://www.baeldung.com/spring-bean-scopes)
+- 🆕 📖 [Null-Safety with JSpecify (Spring Framework reference)](https://docs.spring.io/spring-framework/reference/core/null-safety.html) · [JSpecify user guide](https://jspecify.dev/docs/user-guide/)
 
 ### 11.3 Spring MVC & Spring Boot
 
@@ -520,6 +596,13 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 - ⭐ [REST with Spring Series](https://www.baeldung.com/rest-with-spring-series)
 - [Building a RESTful Web Service (Java config)](https://www.baeldung.com/building-a-restful-web-service-with-spring-and-java-based-configuration)
 - 🧪 [Building a RESTful Web Service (official guide)](https://spring.io/guides/gs/rest-service/)
+- 🆕 📖 [API Versioning (Spring Framework reference)](https://docs.spring.io/spring-framework/reference/web/webmvc-versioning.html)
+
+**Calling other services (HTTP clients)**
+
+- 🆕 ⭐ [`RestClient` — the modern synchronous HTTP client](https://www.baeldung.com/spring-boot-restclient)
+- 🆕 [HTTP Interface clients (`@HttpExchange`)](https://www.baeldung.com/spring-6-http-interface)
+- 📖 [REST Clients (Spring Framework reference)](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html)
 
 ### 11.5 Validation
 
@@ -539,7 +622,10 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 
 ### 11.8 JSON, Templates & Serialization
 
+> 🆕 Spring Boot 4 uses **Jackson 3** (packages move from `com.fasterxml.jackson` to `tools.jackson`, and mappers are immutable — configured via `JsonMapper.builder()`). Concepts from Jackson 2 tutorials still apply.
+
 - [Jackson ObjectMapper Tutorial](https://www.baeldung.com/jackson-object-mapper-tutorial)
+- 📖 [JSON support in Spring Boot (reference)](https://docs.spring.io/spring-boot/reference/features/json.html)
 - [Spring Template Engines (Thymeleaf, etc.)](https://www.baeldung.com/spring-template-engines)
 
 ### 11.9 Persistence: Spring JDBC & Spring Data JPA
@@ -555,23 +641,68 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 
 ### 11.11 Spring Security 🆕
 
-> Spring Security 6 uses the **lambda DSL** and requires the `jakarta.*` namespace — many older tutorials are out of date, so prefer the resources below.
+> Spring Boot 4 ships **Spring Security 7**, which uses the **lambda DSL** exclusively and requires the `jakarta.*` namespace. Tutorials using `WebSecurityConfigurerAdapter` or `.and()` chaining are out of date — prefer the resources below.
 
 - ⭐ [Security with Spring Series](https://www.baeldung.com/security-spring)
 - [Spring Boot Security Auto-Configuration](https://www.baeldung.com/spring-boot-security-autoconfiguration)
 - 📖 [Spring Security Reference Docs](https://docs.spring.io/spring-security/reference/index.html)
+
+**OAuth 2.0 & OpenID Connect** — how real-world APIs are secured (JWT tokens from Keycloak, Okta, Entra ID, etc.)
+
+- ⭐ [OAuth 2.0 Resource Server with Spring Security](https://www.baeldung.com/spring-security-oauth-resource-server)
+- [OAuth 2.0 Login (social / SSO login)](https://www.baeldung.com/spring-security-5-oauth2-login)
+- 📖 [OAuth2 (Spring Security reference)](https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html)
 - 🎥 [Spring Security — video series (LinuxTex)](https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE)
 
 ### 11.12 Actuator & Observability 🆕
 
 - [Spring Boot Actuator](https://www.baeldung.com/spring-boot-actuators)
-- [Observability with Spring Boot 3 (Micrometer, tracing)](https://www.baeldung.com/spring-boot-3-observability)
+- [Observability with Spring Boot (Micrometer, tracing)](https://www.baeldung.com/spring-boot-3-observability)
+- 📖 [Observability (Spring Boot reference)](https://docs.spring.io/spring-boot/reference/actuator/observability.html)
+- 🆕 [OpenTelemetry for Java](https://opentelemetry.io/docs/languages/java/) — the vendor-neutral standard for traces, metrics and logs
+- 📖 [Logging in Spring Boot (incl. structured JSON logs)](https://docs.spring.io/spring-boot/reference/features/logging.html)
+- [SLF4J with Logback & Log4j2](https://www.baeldung.com/slf4j-with-log4j2-logback)
 
 ### 11.13 Reactive Spring (WebFlux) 🆕
 
 - [Guide to Spring WebFlux](https://www.baeldung.com/spring-webflux)
 - [Handling Errors in Spring WebFlux](https://www.baeldung.com/spring-webflux-errors)
 - [Reactor WebFlux vs. Virtual Threads — which to choose](https://www.baeldung.com/java-reactor-webflux-vs-virtual-threads)
+
+### 11.14 Resilience: Retries & Concurrency Limits 🆕
+
+> New in Framework 7: `@Retryable` (with backoff and jitter) and `@ConcurrencyLimit` live in Spring core — enable them with `@EnableResilientMethods`. Reach for Resilience4j when you need circuit breakers or rate limiters.
+
+- 📖 [Resilience Features (Spring Framework reference)](https://docs.spring.io/spring-framework/reference/core/resilience.html)
+- [Guide to Resilience4j](https://www.baeldung.com/resilience4j)
+
+### 11.15 Caching
+
+- 🧪 [Caching Data with Spring (official guide)](https://spring.io/guides/gs/caching/)
+- [A Guide to Caching in Spring](https://www.baeldung.com/spring-cache-tutorial)
+- [Spring Boot Cache with Redis](https://www.baeldung.com/spring-boot-redis-cache)
+
+### 11.16 Messaging & Event-Driven Systems
+
+> Kafka and RabbitMQ show up in a large share of Java backend job descriptions. Learn the concepts (topics vs. queues, consumer groups, at-least-once delivery, idempotent consumers) — not just the annotations.
+
+- ⭐ [Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka)
+- 📖 [Spring for Apache Kafka (reference)](https://docs.spring.io/spring-kafka/reference/)
+- 🧪 [Messaging with RabbitMQ (official guide)](https://spring.io/guides/gs/messaging-rabbitmq/)
+- [Messaging with Spring AMQP](https://www.baeldung.com/spring-amqp)
+
+### 11.17 Modular Monoliths with Spring Modulith 🆕
+
+> Before reaching for microservices, structure one application into well-bounded modules. Spring Modulith verifies module boundaries in tests and lets modules talk via events.
+
+- ⭐ [Spring Modulith — project home](https://spring.io/projects/spring-modulith)
+- [Introduction to Spring Modulith](https://www.baeldung.com/spring-modulith)
+- 📖 [Spring Modulith Reference](https://docs.spring.io/spring-modulith/reference/)
+
+### 11.18 Local Dev: Docker Compose & Testcontainers at Dev Time 🆕
+
+- [Docker Compose Support in Spring Boot](https://www.baeldung.com/docker-compose-support-spring-boot) — Boot starts your `compose.yaml` services and wires connection details automatically
+- 📖 [Development-time Services (Spring Boot reference)](https://docs.spring.io/spring-boot/reference/features/dev-services.html)
 
 ---
 
@@ -589,46 +720,113 @@ _Fig: Collections Framework hierarchy. Source: [javatpoint](https://www.javatpoi
 
 - [Dockerizing a Spring Boot Application](https://www.baeldung.com/dockerizing-spring-boot-application)
 - 🧪 [Spring Boot with Docker (official guide)](https://spring.io/guides/gs/spring-boot-docker/)
+- 🧪 [Spring Boot on Kubernetes (official guide)](https://spring.io/guides/gs/spring-boot-kubernetes/)
+- 🧪 [Kubernetes Basics (official interactive tutorial)](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 
-### 12.3 Spring AI 🆕
+**Native images — millisecond startup, small memory footprint**
+
+- 📖 [GraalVM Native Images (Spring Boot reference)](https://docs.spring.io/spring-boot/reference/packaging/native-image/index.html)
+- [Native Images with Spring Boot & GraalVM](https://www.baeldung.com/spring-native-intro)
+
+### 12.3 CI/CD
+
+- 📖 [Building and Testing Java with Maven (GitHub Actions)](https://docs.github.com/en/actions/tutorials/build-and-test-code/java-with-maven)
+- Aim for a pipeline that runs tests (incl. Testcontainers), builds a container image, and deploys on merge.
+
+### 12.4 Spring AI 🆕
+
+> Spring AI brings LLMs to Spring the way Spring Data brought databases: one portable API across providers (Anthropic, OpenAI, Bedrock, Ollama, …). Learn it in this order:
+
+**1. Talk to a model**
 
 - ⭐ [Spring AI — project home](https://spring.io/projects/spring-ai/)
 - 📖 [Spring AI Reference — Getting Started](https://docs.spring.io/spring-ai/reference/getting-started.html)
-- [Getting Started with Model Context Protocol (MCP)](https://docs.spring.io/spring-ai/reference/guides/getting-started-mcp.html)
+- 📖 [The `ChatClient` API](https://docs.spring.io/spring-ai/reference/api/chatclient.html)
+- [Introduction to Spring AI (Baeldung)](https://www.baeldung.com/spring-ai)
+
+**2. Let the model call your code (tool calling)** — annotate existing service methods with `@Tool`
+
+- 📖 [Tool Calling](https://docs.spring.io/spring-ai/reference/api/tools.html)
+
+**3. Ground answers in your own data (RAG)**
+
+- 📖 [Retrieval-Augmented Generation](https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html)
+- 📖 [Vector Databases](https://docs.spring.io/spring-ai/reference/api/vectordbs.html) · [PGvector — vectors in plain PostgreSQL](https://docs.spring.io/spring-ai/reference/api/vectordbs/pgvector.html)
+- 📖 [Advisors — memory, RAG and guardrails as interceptors](https://docs.spring.io/spring-ai/reference/api/advisors.html)
+
+**4. Test what the model returns** — LLM output is non-deterministic; treat evaluation like testing
+
+- 📖 [Evaluation Testing](https://docs.spring.io/spring-ai/reference/api/testing.html)
+
+**5. Expose your service to AI agents with MCP** — the [Model Context Protocol](https://modelcontextprotocol.io/) is the standard way for agents (Claude, IDE assistants, …) to call external tools
+
+- ⭐ [Getting Started with MCP (Spring AI)](https://docs.spring.io/spring-ai/reference/guides/getting-started-mcp.html)
+- 📖 [MCP Overview (Spring AI reference)](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html)
+- [Model Context Protocol with Spring AI (Baeldung)](https://www.baeldung.com/spring-ai-model-context-protocol-mcp)
+
+> ℹ️ **Versions move fast here.** Spring AI 1.1.x is the stable line and 2.0 is in release-candidate. For new remote MCP servers, prefer the **Streamable HTTP** transport over the older SSE transport — the protocol is moving toward stateless servers that scale behind load balancers. Always check the reference docs over blog posts.
 
 ---
 
-## 🎯 Chapter 13: Practice, Projects & Roadmaps
+## 🔄 Chapter 13: Upgrading & Maintaining Legacy Code
+
+> Goal: be useful on day one of a real job. Most Java work happens in existing codebases on Java 8/11/17 and Spring Boot 2/3 — and with Boot 3.5's free support over, many teams are migrating to Boot 4 right now. Knowing how to upgrade safely is a genuine differentiator.
+
+### 13.1 Upgrading Java (8 → 17 → 21 → 25)
+
+- [Migrating from Java 8 to Java 17](https://www.baeldung.com/java-migrate-8-to-17)
+- 📖 [OpenRewrite — Java migration recipes](https://docs.openrewrite.org/recipes/java/migrate) — automated, reviewable code changes
+- Strategy: upgrade the JDK first (keep the code compiling), then adopt new language features gradually.
+
+### 13.2 Upgrading Spring Boot (2 → 3 → 4)
+
+- [`javax` → `jakarta`: the big Boot 3 break](https://www.baeldung.com/java-jakarta-enterprise-edition-migration)
+- [Migrating to Spring Boot 3](https://www.baeldung.com/spring-boot-3-migration)
+- 📖 [Spring Boot 4.0 Migration Guide (official wiki)](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide)
+- 📖 [OpenRewrite — Spring Boot 3 recipes](https://docs.openrewrite.org/recipes/java/spring/boot3) · [Spring Boot 4 recipes](https://docs.openrewrite.org/recipes/java/spring/boot4)
+- Strategy: get to the latest **3.5.x** first and fix all deprecation warnings, *then* jump to 4.x. Never skip a major.
+
+### 13.3 Working in Code You Didn't Write
+
+- 📖 [Refactoring Guru — Refactoring Catalog](https://refactoring.guru/refactoring) — small, safe, named moves
+- Write **characterization tests** that pin down current behaviour before you change anything ([Chapter 6](#-chapter-6-testing)).
+- Use the debugger ([1.6](#16-tools-of-the-trade-ide-debugger--git)) and `git log -p` / `git blame` to learn *why* code is the way it is.
+
+---
+
+## 🎯 Chapter 14: Practice, Projects & Roadmaps
 
 > Goal: knowledge only sticks when you build. Pick a track and ship something.
 
-### 13.1 Visual Roadmaps
+### 14.1 Visual Roadmaps
 
 - 🗺️ [roadmap.sh — Java](https://roadmap.sh/java)
 - 🗺️ [roadmap.sh — Spring Boot](https://roadmap.sh/spring-boot)
 
-### 13.2 Coding Practice
+### 14.2 Coding Practice
 
 - 🧪 [Exercism — Java Track (mentored, free)](https://exercism.org/tracks/java)
 - 🧪 [HackerRank — Java](https://www.hackerrank.com/domains/java)
 - 🧪 [LeetCode — practice DSA in Java](https://leetcode.com/)
 
-### 13.3 Reference & Cheat Sheets
+### 14.3 Reference & Cheat Sheets
 
 - ⚡ [dev.java — official Java resources & guides](https://dev.java/)
 - ⚡ [Baeldung — full Java & Spring catalogue](https://www.baeldung.com/full_archive)
 - 📖 [Official Java SE API Docs](https://docs.oracle.com/en/java/javase/25/docs/api/index.html)
 - 📖 [Spring Guides — task-focused tutorials](https://spring.io/guides)
 
-### 13.4 Project Ideas to Build
+### 14.4 Project Ideas to Build
 
-Progress from small to production-shaped:
+Progress from small to production-shaped — ideally by growing **one** app through every stage:
 
-1. **CLI to-do app** — collections, file I/O, exception handling.
-2. **REST API for a bookstore** — Spring Boot, Spring Data JPA, validation, exception handling, tests.
-3. **Secured multi-user API** — add Spring Security (JWT), profiles, and Testcontainers integration tests.
-4. **Dockerized microservice** — containerize it, add Actuator health checks and observability.
-5. **AI-assisted feature** — add a Spring AI chat/summarize endpoint backed by a model.
+1. **CLI to-do app** — Java 25 `void main()`, records, collections, file I/O, exception handling.
+2. **REST API for a bookstore** — Spring Boot 4, Spring Data JPA, Flyway, validation, `ProblemDetail` errors, versioned endpoints, tests.
+3. **Secured multi-user API** — Spring Security 7 as an OAuth2 resource server (e.g. Keycloak), profiles, Testcontainers integration tests.
+4. **Event-driven & resilient** — publish "order placed" events to Kafka, cache hot reads in Redis, call a downstream service with `RestClient` + `@Retryable`.
+5. **Production-shaped** — containerize, deploy to Kubernetes, add Actuator + OpenTelemetry, and a GitHub Actions pipeline.
+6. **AI-powered features** — a Spring AI endpoint that answers questions about your catalogue with RAG (pgvector), and expose the bookstore as an **MCP server** so an AI agent can search and order books.
+7. **Upgrade challenge** — clone an old open-source Spring Boot 2 sample and migrate it to Boot 4 with OpenRewrite.
 
 ---
 
@@ -644,4 +842,4 @@ Great additions: modern-Java resources, hands-on tutorials, and anything that re
 ---
 
 _Maintained for educational purposes. Curated for **Java 25 (LTS)** and **Spring Boot 4 / Spring Framework 7**._
-_Last updated: July 18, 2026._
+_Last updated: October 25, 2026._
